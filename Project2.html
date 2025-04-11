@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASYNC PROJECT2</title>
+    <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #121212;
+        color: #00ffcc;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .clock {
+        font-size: 3rem;
+        border: 2px solid #00ffcc;
+        padding: 20px;
+        border-radius: 10px;
+        background: #222;
+    }
+            
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <span id="hours"></span> :
+        <span id="minutes"></span> :
+        <span id="seconds"></span>
+    </div>
+    <script>
+        function updateClock() {
+            let now = new Date();
+            document.getElementById('hours').textContent = String(now.getHours()).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(now.getSeconds()).padStart(2, '0');
+    }
+
+    setInterval(updateClock, 1000); // Update every second
+    updateClock(); // Initial call
+    </script>
+</body>
+</html>
